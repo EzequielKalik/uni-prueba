@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de búsqueda - Uni</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="logo_uni.svg" alt="Logo Uni" class="h-8">
+      <input type="text" placeholder="Buscar..." class="border px-3 py-1 rounded w-64">
+    </div>
+    <div class="flex space-x-4">
+      <button class="bg-blue-900 text-white px-4 py-2 rounded">Inicio</button>
+      <button class="bg-blue-900 text-white px-4 py-2 rounded">Test vocacional</button>
+      <img src="perfil.jpg" alt="Perfil" class="h-8 w-8 rounded-full border-2 border-blue-900">
+    </div>
+  </header>
+
+  <!-- Resultados -->
+  <section class="px-8 py-6">
+    <h2 class="text-xl font-semibold mb-4">Resultados de búsqueda para <span class="text-blue-800">Ingeniería Informática</span></h2>
+
+    <!-- Universidades relacionadas -->
+    <div class="flex flex-wrap gap-6 items-center mb-6">
+      <img src="logos/uba.png" class="h-10" alt="UBA">
+      <img src="logos/utn.png" class="h-10" alt="UTN">
+      <img src="logos/itba.png" class="h-10" alt="ITBA">
+      <img src="logos/uade.png" class="h-10" alt="UADE">
+    </div>
+
+    <!-- Cards de carreras -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="relative bg-black text-white h-64 rounded-xl overflow-hidden shadow-md">
+        <img src="img/carrera1.jpg" alt="Carrera" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <div class="relative z-10 p-4 flex flex-col justify-end h-full">
+          <h3 class="text-lg font-semibold">¿Estás pensando estudiar Ingeniería Informática?</h3>
+          <p class="text-sm">Reproduciendo desde: Profesor Felipe Rocha</p>
+        </div>
+      </div>
+      <div class="relative bg-black text-white h-64 rounded-xl overflow-hidden shadow-md">
+        <img src="img/carrera2.jpg" alt="Carrera" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <div class="relative z-10 p-4 flex flex-col justify-end h-full">
+          <h3 class="text-lg font-semibold">Tips de estudio</h3>
+          <p class="text-sm">Para cuando tenés poco tiempo</p>
+        </div>
+      </div>
+      <div class="relative bg-black text-white h-64 rounded-xl overflow-hidden shadow-md">
+        <img src="img/carrera3.jpg" alt="Carrera" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <div class="relative z-10 p-4 flex flex-col justify-end h-full">
+          <h3 class="text-lg font-semibold">Testimonios reales</h3>
+          <p class="text-sm">Lo que opinan estudiantes de la UTN y el ITBA</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonios rápidos -->
+    <div class="bg-white p-6 rounded shadow-md max-w-3xl mx-auto space-y-4">
+      <div class="flex items-center space-x-3">
+        <img src="img/user1.jpg" alt="Testimonio" class="w-10 h-10 rounded-full">
+        <p class="text-gray-800 text-sm">"La carrera en la UTN es muy exigente pero súper completa."</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <img src="img/user2.jpg" alt="Testimonio" class="w-10 h-10 rounded-full">
+        <p class="text-gray-800 text-sm">"El ITBA me dio una base muy sólida en programación."</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

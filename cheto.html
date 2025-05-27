@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Uni - Comparador educativo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script defer>
+    function openTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.getElementById(tabName).classList.remove('hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mapa
+      const map = L.map('map').setView([-34.6037, -58.3816], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([-34.6037, -58.3816]).addTo(map)
+        .bindPopup('UBA - Universidad de Buenos Aires');
+    });
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="logo_uni.svg" alt="Uni Logo" class="h-8">
+      <span class="text-xl font-bold text-blue-900">Uni</span>
+    </div>
+    <nav class="space-x-4 text-sm">
+      <button onclick="openTab('search')">Buscar</button>
+      <button onclick="openTab('compare')">Comparar</button>
+      <button onclick="openTab('testimonios')">Testimonios</button>
+      <button onclick="openTab('mapa')">Mapa</button>
+      <button onclick="openTab('plan')">Plan</button>
+      <button onclick="openTab('blog')">Blog</button>
+      <button onclick="openTab('alertas')">Alertas</button>
+    </nav>
+  </header>
+
+  <main class="p-6 space-y-6">
+    <!-- Filtros de búsqueda -->
+    <div id="search" class="tab-content">
+      <h2 class="text-xl font-semibold mb-4">Resultados de Búsqueda con Filtros</h2>
+      <div class="bg-white p-4 rounded shadow">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+          <select class="border p-2 rounded"><option>Ubicación</option></select>
+          <select class="border p-2 rounded"><option>Tipo</option></select>
+          <select class="border p-2 rounded"><option>Modalidad</option></select>
+          <select class="border p-2 rounded"><option>Duración</option></select>
+        </div>
+        <div class="space-y-2">
+          <div class="p-4 bg-gray-50 rounded shadow">Resultado 1</div>
+          <div class="p-4 bg-gray-50 rounded shadow">Resultado 2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparación -->
+    <div id="compare" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">Comparación</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded shadow">Carrera / Universidad 1</div>
+        <div class="bg-white p-4 rounded shadow">Carrera / Universidad 2</div>
+      </div>
+    </div>
+
+    <!-- Testimonios -->
+    <div id="testimonios" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">Testimonios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded shadow">Estudiante: "Elegí esta carrera porque..."</div>
+        <div class="bg-white p-4 rounded shadow">Egresado: "Hoy trabajo en..."</div>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div id="mapa" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">Mapa de Universidades</h2>
+      <div id="map" class="h-96 rounded shadow"></div>
+    </div>
+
+    <!-- Plan de estudios -->
+    <div id="plan" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">Plan de Estudios</h2>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-semibold">Año 1</h3>
+        <ul class="list-disc list-inside">
+          <li>Introducción a la Universidad</li>
+          <li>Matemática I</li>
+        </ul>
+        <h3 class="font-semibold mt-4">Año 2</h3>
+        <ul class="list-disc list-inside">
+          <li>Programación I</li>
+          <li>Estadística</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Blog -->
+    <div id="blog" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">Blog de Orientación</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h4 class="font-bold">¿Pública o privada?</h4>
+          <p>Ventajas y desventajas de cada una.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h4 class="font-bold">Mudarte para estudiar</h4>
+          <p>¿Conviene? Costos, experiencias.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alertas -->
+    <div id="alertas" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">Alertas</h2>
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+        <p><strong>UBA:</strong> Inscripciones abiertas hasta el 20 de junio.</p>
+        <p><strong>UTN:</strong> Nuevas becas disponibles para ingresantes.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

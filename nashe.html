@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Uni - Comparador educativo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer>
+    function openTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.getElementById(tabName).classList.remove('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="logo_uni.svg" alt="Uni Logo" class="h-8">
+      <span class="text-xl font-bold text-blue-900">Uni</span>
+    </div>
+    <nav class="space-x-4 text-sm">
+      <button onclick="openTab('search')" class="text-blue-800 hover:underline">Buscar</button>
+      <button onclick="openTab('compare')" class="text-blue-800 hover:underline">Comparar</button>
+      <button onclick="openTab('testimonios')" class="text-blue-800 hover:underline">Testimonios</button>
+      <button onclick="openTab('mapa')" class="text-blue-800 hover:underline">Mapa</button>
+      <button onclick="openTab('plan')" class="text-blue-800 hover:underline">Plan de Estudios</button>
+      <button onclick="openTab('blog')" class="text-blue-800 hover:underline">Blog</button>
+      <button onclick="openTab('alertas')" class="text-blue-800 hover:underline">Alertas</button>
+    </nav>
+  </header>
+
+  <!-- Tabs content -->
+  <main class="p-6 space-y-6">
+    <div id="search" class="tab-content">
+      <h2 class="text-xl font-semibold mb-4">🔍 Resultados de Búsqueda con Filtros</h2>
+      <!-- Aquí van los filtros y los resultados -->
+    </div>
+
+    <div id="compare" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">📊 Comparación de Carreras / Universidades</h2>
+      <!-- Comparador dinámico -->
+    </div>
+
+    <div id="testimonios" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">💬 Testimonios de Estudiantes y Egresados</h2>
+      <!-- Tarjetas con testimonios -->
+    </div>
+
+    <div id="mapa" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">🗺️ Mapa de Universidades</h2>
+      <!-- Acá insertaremos un iframe de mapa o integración con Leaflet -->
+      <div class="bg-white rounded shadow p-4 h-[400px]">[Mapa aquí]</div>
+    </div>
+
+    <div id="plan" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">📘 Plan de Estudios Interactivo</h2>
+      <!-- Plan por materias y años -->
+    </div>
+
+    <div id="blog" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">📰 Blog de Orientación</h2>
+      <!-- Posts informativos -->
+    </div>
+
+    <div id="alertas" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-4">🔔 Sistema de Alertas</h2>
+      <!-- Alertas e inscripciones -->
+    </div>
+  </main>
+
+</body>
+</html>
